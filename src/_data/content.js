@@ -155,7 +155,7 @@ const entries = [
     categories: ['Twitter Blue'],
     color: 'blue',
     faicon: 'dog',
-    datetime: '2022-11-10 7:29',
+    datetime: '2022-11-10T07:29:00',
     title: 'Musk chortles at Twitter Blue disasters',
     image: {
       link: '',
