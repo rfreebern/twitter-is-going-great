@@ -1,4 +1,4 @@
-const moment = require('moment');
+const { DateTime } = require('luxon');
 
 const sentenceCase = function (str) {
   if (typeof str !== 'string' || !str.length) {
@@ -9,11 +9,11 @@ const sentenceCase = function (str) {
 };
 
 const humanizeDate = function (datetime, date) {
-  const m = moment(datetime || date);
+  const dt = DateTime.fromISO(datetime || date);
   if (datetime) {
-    return m.format('LLL');
+    return dt.toLocaleString(DateTime.DATETIME_FULL);
   }
-  return m.format('LL');
+  return dt.toLocaleString(DateTime.DATE_FULL);
 };
 
 const isWrappedInParagraphTags = function (html) {

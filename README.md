@@ -37,7 +37,7 @@ Almost all of the content you need to change is in `src/_data/content.js`.
   - `categories` (array of strings, optional): A list of categories that apply to this entry. These will show up as checkboxes at the top of the page, and allow readers to filter the timeline. They may not contain commas. They can be hyphen or space separated (`sample category` or `sample-category` will both display on the page as `Sample category`). Entries without any categories will always display.
   - `color` (string, optional): The color of the circle that displays on the timeline line. The options already defined are `green`, `red`, and `grey`. You can define additional colors in `css/custom.css` (see below).
   - `faicon` (string, optional): The name of a Font Awesome icon to use in the circle on the timeline line. [Explore the options](https://fontawesome.com/v5.15/icons?d=gallery&p=2&s=solid&m=free). This is just the icon name (without the `fa-` prefix). For example: `anchor`.
-  - `datetime` (string, either `datetime` or `date` must be present): A date and time specifier for the item. This can be in [any format that `moment.js` recognizes](https://momentjs.com/docs/#/parsing/string/). I normally do "YYYY-MM-DD HH-SS". If there is no time, only a date, use the `date` parameter instead of `datetime`.
+  - `datetime` (string, either `datetime` or `date` must be present): A date and time specifier for the item. This is best in ISO8601 format, but can be in [any format that `Luxon` recognizes](https://moment.github.io/luxon/#/parsing). I normally do "YYYY-MM-DDTHH-MM". If there is no time, only a date, use the `date` parameter instead of `datetime`.
   - `date` (string, either `datetime` or `date` must be present): A date specifier for the item. "YYYY-MM-DD".
   - `title` (HTML, **required**): The title of the timeline entry.
   - `image` (optional): An image to display in the entry
@@ -55,7 +55,7 @@ Almost all of the content you need to change is in `src/_data/content.js`.
 
 - `pageTitle` (string, **required**): The text to go in the `<title>` tag, to set the title of the page in the browser.
 - `pageDescription` (string, optional): Page description to go into [meta](https://www.w3schools.com/tags/tag_meta.asp) tags.
-- `pageAuthor` (string, optinal): Page author to go into [meta](https://www.w3schools.com/tags/tag_meta.asp) tags.
+- `pageAuthor` (string, optional): Page author to go into [meta](https://www.w3schools.com/tags/tag_meta.asp) tags.
 
 ## Additional customization
 
@@ -85,7 +85,7 @@ To deploy your static site on GitHub pages (free), create a branch containing th
 
 There are some good tutorials out there for deploying a static site on various other free services. A few are listed below.
 
-You can also look for tutorials on how to deploy a site built with [eleventy](https://www.11ty.dev/), since that's what's powering this project. Some webhosting services like Vercel specifically support eleventy in some really handy ways.
+You can also look for tutorials on how to deploy a site built with [eleventy](https://www.11ty.dev/), since that's what's powering this project. Some web hosting services like Vercel specifically support eleventy in some really handy ways.
 
 - [Netlify](https://www.netlify.com/blog/2016/10/27/a-step-by-step-guide-deploying-a-static-site-or-single-page-app/)
 - [Vercel](https://vercel.com/guides/deploying-eleventy-with-vercel)
